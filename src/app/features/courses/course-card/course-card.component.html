@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2>{{course.title}}</h2>
+      <p>{{course.description}}</p>
+    </div>
+    <div class="col-auto">
+      <div class="row">
+        <div class="col-auto"> 
+            <strong>Authors:</strong>
+        </div>
+        <div class="col-auto" *ngFor="let author of course.authors">
+            {{author}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-auto">
+            <strong>Duration: </strong>
+        </div>
+        <div class="col-auto">
+            {{durationDate | date: "HH:mm" }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-auto">
+            <strong>Created: </strong>
+        </div>
+        <div class="col-auto">
+            {{course.creationDate | date: "dd.MM.yyyy"}}
+        </div>
+      </div>
+      <ng-content select=".buttons"></ng-content>
+     
+      
+    </div>
+  </div>
+</div>
