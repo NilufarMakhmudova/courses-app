@@ -1,0 +1,25 @@
+<app-header class="container-fluid">
+    <div class ="itemsForLoggedInUsers row align-items-center justify-content-start">            
+        <div class="col-3">
+            <span class="username">Nilufar</span>
+        </div>
+        <div class="col-3">
+            <app-button buttonText="Logout"></app-button>
+        </div>
+    </div>
+</app-header>
+
+<app-info>
+    <strong class="title">Your list is empty</strong>
+    <p class="text">Please click on a button</p>
+    <app-button buttonText = "Add new course" class="button"></app-button>
+</app-info>
+
+<app-course-list 
+    [courses] = "coursesList" 
+    [isEditable] = "true" 
+    (showCourseEvent)="showCourse($event)"
+    (editCourseEvent)="editCourse($event)"
+    (deleteCourseEvent)="deleteCourse($event)"
+>
+</app-course-list>

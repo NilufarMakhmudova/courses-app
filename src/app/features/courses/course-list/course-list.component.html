@@ -1,0 +1,13 @@
+<app-course-card *ngFor="let course of courses" [course]="course">
+  <div class="buttons row justify-content-center align-items-center">
+    <div class="col-auto">
+      <app-button buttonText="Show course" (click)="showCourse(course.title)"></app-button>
+    </div>
+    <div *ngIf="isEditable" class="col-auto">
+      <app-button iconName="edit" (click)="editCourse(course.title)"></app-button>
+    </div>
+    <div *ngIf="isEditable" class="col-auto">
+      <app-button iconName="delete" (click)="deleteCourse(course.title)"></app-button>
+    </div>
+  </div>
+</app-course-card>
